@@ -1,53 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AND</title>
-	<style>
-.button {
-  background-color: #008CBA; /* Blue */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-</style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .button {
+            background-color: #008CBA; /* Blue */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #005f7a; /* Darker blue on hover */
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        #andGate {
+            width: 100px; /* Set width for the image */
+            transition: transform 0.3s;
+        }
+        #andGate:hover {
+            transform: scale(1.1); /* Slightly enlarge the image on hover */
+        }
+        img {
+            cursor: pointer;
+            margin: 10px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #008CBA;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #005f7a;
+        }
+    </style>
 </head>
 <body>
 
-<script src = "javascript.js"></script>
+<script src="javascript.js"></script>
 <script> 
-
+    // Your JavaScript functions can go here
 </script>
 
- <button class="button" onclick = "and()">Run</button>
-<p>
+<button class="button" onclick="and()">Run</button>
 
-<table style="width:100%">
-
+<table>
   <tr>
     <td>
-	<img src="https://www.iconsdb.com/icons/preview/red/button-off-xxl.png"  id="toggleImage" onclick="toggleImage(); toggleInputOne();"/>
-	<br>
-    <img src="https://www.iconsdb.com/icons/preview/red/button-off-xxl.png"  id="toggleImage2" onclick="toggleImage2(); toggleInputTwo();"/> 
-</td>
-    <td><img id="andGate" src="and2off.PNG" ></td>
+        <img src="https://www.iconsdb.com/icons/preview/red/button-off-xxl.png" id="toggleImage" onclick="toggleImage(); toggleInputOne();"/>
+        <br>
+        <img src="https://www.iconsdb.com/icons/preview/red/button-off-xxl.png" id="toggleImage2" onclick="toggleImage2(); toggleInputTwo();"/> 
+    </td>
+    <td>
+        <img id="andGate" src="and2off.PNG" alt="AND Gate">
+    </td>
   </tr>
-
 </table>
 
-<a href="index.html">Back to Home</a></h3>
-
-</p>
-
-
-
-
-
+<a href="index.html">Back to Home</a>
 
 </body>
 </html>
