@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FoC</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #ffe4e1; /* overall bg */
+            color: #4B4A57; /* soft dark text */
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: Teal; 
+            padding: 2rem;
+            color: #fff; /* white */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px; /* space between title and nav */
+        }
+
+        /* bar in header */
+        .nav-header {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .nav-header a {
+            color: #5D536B;
+            background-color: #ADD8E6; /* baby blue */
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-header a:hover {
+            background-color: light-green; /*color changes on hover */
+        }
+
+        /* Article section */
+        .background-section {
+            background-color: #FFEBEE; /* pink background for article / section thingy */
+            padding: 3px;
+	    font-weight: bold;
+            border-radius: 10px; /* shape of section thingy */
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .background-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #90EE90 ; /*light green */
+            padding: 2rem; /* space */
+            text-align: center;
+            color: #5D536B;
+            border-top: 2px solid #D5B0FF;
+        }
+    </style>
+
+</head>
+<body>
+<center>
+<section>
+<h2>Project 1: Not Gate</h2>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Input</h2>
+    <p><button style="width: 100px; height: 40px;" onclick="document.getElementById('belizeImage').src='noton2.png'">ON</button></p>
+    <p><button style="width: 100px; height: 40px;" onclick="document.getElementById('belizeImage').src='notoff2.png'">OFF</button></p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Output</h2>
+	<hr>
+	<img id="belizeImage" src="noton2.png" alt="noton" width="400" height="86" align="center">
+  </div>
+</div>
+<a href="index.html">Back to Home</a></h3>
+</section>
+</center>
+
+
+
+<footer>
+  <p>@ Powered by Kemrick Rodriguez & UB</p>
+</footer>
+
+</body>
+</html>

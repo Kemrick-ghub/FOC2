@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Me - Kemrick Rodriguez</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #ffe4e1; /* overall bg */
+            color: #4B4A57; /* soft dark text */
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: Teal; 
+            padding: 2rem;
+            color: #fff; /* white */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px; /* space between title and nav */
+            text-align: center; /* Center the header */
+        }
+
+        /* bar in header */
+        .nav-header {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .nav-header a {
+            color: #5D536B;
+            background-color: #ADD8E6; /* baby blue */
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-header a:hover {
+            background-color: light-green; /* color changes on hover */
+        }
+
+        /* Article section */
+        .background-section {
+            background-color: #FFEBEE; /* pink background for article / section thingy */
+            padding: 3px;
+            font-weight: bold;
+            border-radius: 10px; /* shape of section thingy */
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .about-container {
+            display: flex; /* Flexbox for centering */
+            flex-direction: column; /* Align items vertically */
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Center text */
+        }
+
+        .profile-picture {
+            border-radius: 50%; /* Circular image */
+            width: 280px; /* Shape of image */
+            height: 280px;
+            border: 5px solid #800080; /* Purple border around picture */
+            object-fit: cover; /* Ensures the image fits the circular frame */
+            margin-bottom: 10px; /* Space between image and text */
+        }
+
+        .background-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #90EE90; /* light green */
+            padding: 2rem; /* space */
+            text-align: center;
+            color: #5D536B;
+            border-top: 2px solid #D5B0FF;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>Dev Team</h2>
+    <nav class="nav-header">
+        <a href="index.html">Home</a>
+        <a href="project.html">Project</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="database.html">Databases</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="aboutme.html">Dev Team</a>
+    </nav>
+</header>
+
+<!-- About Me Section -->
+<section class="container mt-5">
+    <h3>About Me</h3>
+    <h4><a href="resume3.html" style="color: black; text-decoration: none;">Visit my resume</a></h4>
+    <div class="about-container">
+        <img src="20220802_174848.jpg" alt="Kemrick Rodriguez" class="profile-picture">
+        <div class="about-text">
+            <p>Kemrick Rodriguez holds a high school degree from Edward P. Yorke High School located in Belize, Central America. He is now completing his college degree at the University of Belize for an Associate in Information Technology. He now ventures with the courses of Principles of Programming 1, Fundamentals of Computing, Ethics, English, and two types of Maths.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>@ Powered by Kemrick Rodriguez & UB</p>
+</footer>
+
+</body>
+</html>
