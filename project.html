@@ -17,6 +17,9 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Ensures the body takes up at least the full height of the screen */
     }
 
     /* Header styling */
@@ -35,26 +38,6 @@
       margin-bottom: 20px;
     }
 
-    /* Navigation bar within header */
-    .nav-header {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .nav-header a {
-      color: #5D536B; /* soft dark grey */
-      background-color: #ADD8E6; /* light blue */
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .nav-header a:hover {
-      background-color: #90EE90; /* Light Green on hover */
-    }
-
     /* Section background */
     .background-section {
       background-color: #FFEBEE; /* light pink */
@@ -62,13 +45,49 @@
       font-weight: bold;
       border-radius: 10px;
       margin-bottom: 3rem;
-      text-align: center;
+      text-align: left;
+      display: flex;
+      flex-direction: row; /* Place content in a row */
+      align-items: flex-start; /* Align items at the top */
+      gap: 3rem; /* Space between the paragraph and nav-header */
     }
 
     .background-section img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
+    }
+
+    .background-section .text-container {
+      flex: 1; /* Allow text to take up remaining space */
+      text-align: left;
+    }
+
+    /* Navigation styling */
+    .nav-header {
+      display: flex;
+      flex-direction: column; /* Stack links vertically */
+      justify-content: flex-start;
+      align-items: flex-start;
+      background-color: #ADD8E6; /* Light blue box */
+      padding: 20px;
+      border-radius: 8px;
+      width: 250px; /* Set a fixed width for the box */
+    }
+
+    .nav-header a {
+      color: #5D536B; /* soft dark grey */
+      background-color: #FFFFFF; /* white background for links */
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      width: 100%; /* Make links full width of container */
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-header a:hover {
+      background-color: #90EE90; /* Light Green on hover */
     }
 
     /* Project box styles */
@@ -105,6 +124,7 @@
       font-size: 1.2rem;
       border-top: 2px solid #D5B0FF;
       animation: colorCycle 10s infinite linear;
+      margin-top: auto; /* Ensures footer stays at the bottom */
     }
 
     /* Keyframes for rotating the footer colors through blue shades */
@@ -121,6 +141,31 @@
       margin: 0;
     }
 
+    /* Styling for the nav section as a column layout */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    nav ul li h5 a {
+      color: #4B4A57;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li h5 a:hover {
+      color: #008B8B;
+    }
+
   </style>
 </head>
 <body>
@@ -129,33 +174,35 @@
     <h2><b>Fundamentals of Computing</b></h2>
   </header>
 
- <div class="container">
-      <nav>
-        <ul>
-          <li><h5><a href="index.html">Home</a></h5></li>
-          <li><h5><a href="concepts.html">Concepts</a></h5></li>
-          <li><h5><a href="database.html">Databases</a></h5></li>
-          <li><h5><a href="documentation.html">Documentation</a></h5></li>
-          <li><h5><a href="aboutme.html">Developer</a></h5></li>
-        </ul>
+  <div class="container">
+    <article class="background-section">
+      <!-- Navigation on the Left -->
+      <nav class="nav-header">
+        <a href="index.html">Home</a>
+        <a href="project.html">Project</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="database.html">Databases</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="aboutme.html">Developer</a>
       </nav>
 
-
-    <article class="background-section">
-      <h1>Project</h1>
-      <p>The final project will consist of 4 sections. Each section has a deadline to complete. A complete description of the project can be found on the course Moodle site. It will consist of launching a website built with HTML, CSS, and JavaScript and hosted on GitHub. This site is a benchmark for the Final Project. See Project Specification on Moodle Site.</p>
-
-      <div class="project-box">
-        <a href="notgate.html" class="project-link">Project 1: NOT Gate</a>
-        <a href="easyand.html" class="project-link">Project 2: AND Gate - Easy Version</a>
-        <a href="binarytohex.html" class="project-link">Project 3: Binary to Hexadecimal Converter</a>
-        <a href="ascii.html" class="project-link">Project 4: ASCII Converter</a>
-        <a href="unicode.html" class="project-link">Project 5: UNICODE Converter</a>
-        <a href="MLinstructions.html" class="project-link">Project 6: Machine Language Instructions Converter</a>
+      <!-- Text Container (Paragraph) on the Right -->
+      <div class="text-container">
+        <h1>Project</h1>
+        <p>The final project will consist of 4 sections. Each section has a deadline to complete. A complete description of the project can be found on the course Moodle site. It will consist of launching a website built with HTML, CSS, and JavaScript and hosted on GitHub. This site is a benchmark for the Final Project. See Project Specification on Moodle Site.</p>
       </div>
-
     </article>
-  </section>
+
+    <div class="project-box">
+      <a href="notgate.html" class="project-link">Project 1: NOT Gate</a>
+      <a href="easyand.html" class="project-link">Project 2: AND Gate - Easy Version</a>
+      <a href="binarytohex.html" class="project-link">Project 3: Binary to Hexadecimal Converter</a>
+      <a href="ascii.html" class="project-link">Project 4: ASCII Converter</a>
+      <a href="unicode.html" class="project-link">Project 5: UNICODE Converter</a>
+      <a href="MLinstructions.html" class="project-link">Project 6: Machine Language Instructions Converter</a>
+    </div>
+
+  </div>
 
   <footer>
     <p>@ Powered by Kemrick Rodriguez</p>
@@ -163,4 +210,5 @@
 
 </body>
 </html>
+
 
