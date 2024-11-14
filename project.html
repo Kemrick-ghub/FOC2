@@ -1,122 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>FoC</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-        body {
-            background-color: #ffe4e1; /* overall bg */
-            color: #4B4A57; /* soft dark text */
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoC</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
 
-        header {
-            background-color: Teal; 
-            padding: 2rem;
-            color: #fff; /* white */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+  <style>
+    /* General body styling */
+    body {
+      background-color: #F0F8FF; /* AliceBlue for subtle, clean look */
+      color: #4B4A57; /* soft dark text */
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-        header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px; /* space between title and nav */
-        }
+    /* Header styling */
+    header {
+      background-color: #008B8B; /* Teal */
+      padding: 2rem;
+      color: #ffffff; /* white text */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-        /* bar in header */
-        .nav-header {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
+    header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
 
-        .nav-header a {
-            color: #5D536B;
-            background-color: #ADD8E6; /* light blue */
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
+    /* Navigation bar within header */
+    .nav-header {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
 
-        .nav-header a:hover {
-            background-color: light-green; /*color changes on hover */
-        }
+    .nav-header a {
+      color: #5D536B; /* soft dark grey */
+      background-color: #ADD8E6; /* light blue */
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
 
-        /* Article section */
-        .background-section {
-            background-color: #FFEBEE; /* pink background for article / section thingy */
-            padding: 3px;
-	    font-weight: bold;
-            border-radius: 10px; /* shape of section thingy */
-            margin-bottom: 3rem;
-            text-align: center;
-        }
+    .nav-header a:hover {
+      background-color: #90EE90; /* Light Green on hover */
+    }
 
-        .background-section img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
+    /* Section background */
+    .background-section {
+      background-color: #FFEBEE; /* light pink */
+      padding: 3rem;
+      font-weight: bold;
+      border-radius: 10px;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
 
-        /* Footer */
-        footer {
-            background-color: #90EE90 ; /*light green */
-            padding: 2rem; /* space */
-            text-align: center;
-            color: #5D536B;
-            border-top: 2px solid #D5B0FF;
-        }
-    </style>
+    .background-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Project box styles */
+    .project-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .project-link {
+      background-color: #ADD8E6; /* light blue */
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      color: #333;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .project-link:hover {
+      background-color: #90EE90; /* Light Green */
+      transform: scale(1.05); /* Slightly enlarge when hovered */
+    }
+
+    /* Footer styling */
+    footer {
+      padding: 2rem;
+      text-align: center;
+      color: #fff; 
+      font-size: 1.2rem;
+      border-top: 2px solid #D5B0FF;
+      animation: colorCycle 10s infinite linear;
+    }
+
+    /* Keyframes for rotating the footer colors through blue shades */
+    @keyframes colorCycle {
+      0% { background-color: #1E90FF; } /* DodgerBlue */
+      20% { background-color: #00BFFF; } /* DeepSkyBlue */
+      40% { background-color: #4682B4; } /* SteelBlue */
+      60% { background-color: #5F9EA0; } /* CadetBlue */
+      80% { background-color: #87CEEB; } /* SkyBlue */
+      100% { background-color: #4682B4; } /* SteelBlue */
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+  </style>
 </head>
 <body>
 
-<header>
-  <h2><b>Fundamentals of Computing</b></h2>
-</header>
+  <header>
+    <h2><b>Fundamentals of Computing</b></h2>
+  </header>
 
-<section>
-  <nav>
-    <ul>
-      <li><h5><a href="index.html">Home</a></h5></li>
-      <li><h5><a href="project.html">Project</a></h5></li>
-	  <li><h5><a href="concepts.html">Concepts</a></h5></li>
-	  <li><h5><a href="database.html">Databases</a></h5></li>
-	  <li><h5><a href="documentation.html">Documentation</a></h5></li>
-      <li><h5><a href="aboutme.html">Dev Team</a></h5></li>
-    </ul>
-  </nav>
-  
-  <article>
-    <h1>Project</h1>
-    <p>The final project will consist of 4 sections. Each section has a deadline to complete. A complete description of the project can be found on the course moodle site. It will consist of launching a website built with, html, css, and javascript and hosted on github. This site is a benchmark for the Final Project. See
-Project Specification on Moodle Site.</p>
+  <section>
+    <nav class="nav-header">
+      <a href="index.html">Home</a>
+      <a href="project.html">Project</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="database.html">Databases</a>
+      <a href="documentation.html">Documentation</a>
+      <a href="aboutme.html">Dev Team</a>
+    </nav>
 
-<ul>
-  <li><a href="notgate.html" style="color:black">Project 1: NOT Gate</a></h3></li>
-  
-  <li><a href="easyand.html" style="color:black">Project 2: AND Gate -easy version</a></h3></li>
-  <li><a href="binarytohex.html" style="color:black">Project 3: Binary to Hexidecimal Converter</a></h3></li>
-  <li><a href="ascii.html" style="color:black">Project 4: ASCII Converter</a></h3></li>
-  <li><a href="unicode.html" style="color:black">Project 4: UNICODE Converter</a></h3></li>
-  <li><a href="MLinstructions.html" style="color:black">Project 5: Machine Language Instructions Converter</a></h3></li>
-</ul>  
+    <article class="background-section">
+      <h1>Project</h1>
+      <p>The final project will consist of 4 sections. Each section has a deadline to complete. A complete description of the project can be found on the course Moodle site. It will consist of launching a website built with HTML, CSS, and JavaScript and hosted on GitHub. This site is a benchmark for the Final Project. See Project Specification on Moodle Site.</p>
 
+      <div class="project-box">
+        <a href="notgate.html" class="project-link">Project 1: NOT Gate</a>
+        <a href="easyand.html" class="project-link">Project 2: AND Gate - Easy Version</a>
+        <a href="binarytohex.html" class="project-link">Project 3: Binary to Hexadecimal Converter</a>
+        <a href="ascii.html" class="project-link">Project 4: ASCII Converter</a>
+        <a href="unicode.html" class="project-link">Project 5: UNICODE Converter</a>
+        <a href="MLinstructions.html" class="project-link">Project 6: Machine Language Instructions Converter</a>
+      </div>
 
-  </article>  
-</section>
+    </article>
+  </section>
 
-
-
-<footer>
-  <p>@ Powered by Kemrick Rodriguez & UB</p>
-</footer>
+  <footer>
+    <p>@ Powered by Kemrick Rodriguez & UB</p>
+  </footer>
 
 </body>
 </html>
+
