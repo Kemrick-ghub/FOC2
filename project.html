@@ -1,214 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FoC</title>
+  <title>FoC - Fundamentals of Computing</title>
+  <!-- Add the favicon here -->
+  <link rel="icon" type="FOC" href="it.webp"> <!-- Update this path with your actual favicon image -->
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
-        crossorigin="anonymous">
 
   <style>
-    /* General body styling */
     body {
-      background-color: #F0F8FF; /* AliceBlue for subtle, clean look */
-      color: #4B4A57; /* soft dark text */
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
       margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh; /* Ensures the body takes up at least the full height of the screen */
     }
-
-    /* Header styling */
     header {
-      background-color: #008B8B; /* Teal */
-      padding: 2rem;
-      color: #ffffff; /* white text */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      background-color: #445174;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
-
     header h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      margin: 0;
+      font-size: 2rem;
     }
-
-    /* Section background */
-    .background-section {
-      background-color: #FFEBEE; /* light pink */
-      padding: 3rem;
-      font-weight: bold;
-      border-radius: 10px;
-      margin-bottom: 3rem;
-      text-align: left;
-      display: flex;
-      flex-direction: row; /* Place content in a row */
-      align-items: flex-start; /* Align items at the top */
-      gap: 3rem; /* Space between the paragraph and nav-header */
+    section {
+      padding: 30px;
     }
-
-    .background-section img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
+    nav ul {
+      list-style-type: none;
+      padding: 0;
     }
-
-    .background-section .text-container {
-      flex: 1; /* Allow text to take up remaining space */
-      text-align: left;
+    nav ul li {
+      display: inline-block;
+      margin-right: 20px;
     }
-
-    /* Navigation styling */
-    .nav-header {
-      display: flex;
-      flex-direction: column; /* Stack links vertically */
-      justify-content: flex-start;
-      align-items: flex-start;
-      background-color: #ADD8E6; /* Light blue box */
+    nav ul li a {
+      color: #343a40;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    nav ul li a:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+    article {
+      background-color: white;
       padding: 20px;
       border-radius: 8px;
-      width: 250px; /* Set a fixed width for the box */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-
-    .nav-header a {
-      color: #5D536B; /* soft dark grey */
-      background-color: #FFFFFF; /* white background for links */
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      text-align: center;
-      width: 100%; /* Make links full width of container */
-      transition: background-color 0.3s ease;
+    article h1 {
+      font-size: 2.5rem;
+      color: #343a40;
     }
-
-    .nav-header a:hover {
-      background-color: #90EE90; /* Light Green on hover */
-    }
-
-    /* Project box styles */
-    .project-box {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      justify-content: center;
-      align-items: center;
-      margin: 20px 0;
-    }
-
-    .project-link {
-      background-color: #ADD8E6; /* light blue */
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      color: #333;
-      text-decoration: none;
-      border-radius: 8px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, background-color 0.3s;
-    }
-
-    .project-link:hover {
-      background-color: #90EE90; /* Light Green */
-      transform: scale(1.05); /* Slightly enlarge when hovered */
-    }
-
-    /* Footer styling */
     footer {
-      padding: 2rem;
+      background-color: #1E90FF; /* Initial Blue (Dodger Blue) */
+      color: #fff;
       text-align: center;
-      color: #fff; 
-      font-size: 1.2rem;
-      border-top: 2px solid #D5B0FF;
-      animation: colorCycle 10s infinite linear;
-      margin-top: auto; /* Ensures footer stays at the bottom */
+      padding: 30px 0;
+      font-size: 1em;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      animation: footerColorChange 10s infinite linear; /* Change animation */
     }
 
-    /* Keyframes for rotating the footer colors through blue shades */
-    @keyframes colorCycle {
+    @keyframes footerColorChange {
       0% { background-color: #1E90FF; } /* DodgerBlue */
       20% { background-color: #00BFFF; } /* DeepSkyBlue */
       40% { background-color: #4682B4; } /* SteelBlue */
       60% { background-color: #5F9EA0; } /* CadetBlue */
       80% { background-color: #87CEEB; } /* SkyBlue */
-      100% { background-color: #4682B4; } /* SteelBlue */
+      100% { background-color: #1E90FF; } /* Back to DodgerBlue */
     }
 
     footer p {
       margin: 0;
     }
-
-    /* Styling for the nav section as a column layout */
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    nav ul li {
-      margin: 10px 0;
-    }
-
-    nav ul li h5 a {
-      color: #4B4A57;
+    .project-list a {
+      display: block;
+      padding: 10px;
+      color: black;
       text-decoration: none;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .project-list a:hover {
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .glowing-text {
+      font-size: 3em;
       font-weight: bold;
-      transition: color 0.3s;
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      animation: neonGlow 1.5s ease-in-out infinite alternate;
     }
 
-    nav ul li h5 a:hover {
-      color: #008B8B;
+    @keyframes neonGlow {
+      0% { text-shadow: 0 0 10px #ff4c4c, 0 0 20px #ff4c4c, 0 0 30px #ff4c4c; }
+      100% { text-shadow: 0 0 30px #ff4c4c, 0 0 40px #ff4c4c, 0 0 50px #ff4c4c; }
     }
-
   </style>
 </head>
+
 <body>
 
   <header>
     <h2><b>Fundamentals of Computing</b></h2>
   </header>
 
-  <div class="container">
-    <article class="background-section">
-      <!-- Navigation on the Left -->
-      <nav class="nav-header">
-        <a href="index.html">Home</a>
-        <a href="project.html">Project</a>
-        <a href="concepts.html">Concepts</a>
-        <a href="database.html">Databases</a>
-        <a href="documentation.html">Documentation</a>
-        <a href="aboutme.html">Developer</a>
+  <section>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><h5><a href="index.html">Home</a></h5></li>
+          <li><h5><a href="concepts.html">Concepts</a></h5></li>
+          <li><h5><a href="database.html">Databases</a></h5></li>
+          <li><h5><a href="documentation.html">Documentation</a></h5></li>
+          <li><h5><a href="aboutme.html">Developer</a></h5></li>
+        </ul>
       </nav>
 
-      <!-- Text Container (Paragraph) on the Right -->
-      <div class="text-container">
+      <article>
         <h1>Project</h1>
         <p>The final project will consist of 4 sections. Each section has a deadline to complete. A complete description of the project can be found on the course Moodle site. It will consist of launching a website built with HTML, CSS, and JavaScript and hosted on GitHub. This site is a benchmark for the Final Project. See Project Specification on Moodle Site.</p>
-      </div>
-    </article>
 
-    <div class="project-box">
-      <a href="notgate.html" class="project-link">Project 1: NOT Gate</a>
-      <a href="easyand.html" class="project-link">Project 2: AND Gate - Easy Version</a>
-      <a href="binarytohex.html" class="project-link">Project 3: Binary to Hexadecimal Converter</a>
-      <a href="ascii.html" class="project-link">Project 4: ASCII Converter</a>
-      <a href="unicode.html" class="project-link">Project 5: UNICODE Converter</a>
-      <a href="MLinstructions.html" class="project-link">Project 6: Machine Language Instructions Converter</a>
+        <div class="project-list">
+          <ul>
+            <li><a href="notgate.html">Project 1: NOT Gate</a></li>
+            <li><a href="andgate.html">Project 2: AND Gate</a></li>
+            <li><a href="easyand.html">Project 2: AND Gate - Easy Version</a></li>
+            <li><a href="binarytohex.html">Project 3: Binary to Hexadecimal Converter</a></li>
+            <li><a href="ascii.html">Project 4: ASCII Converter</a></li>
+            <li><a href="unicode.html">Project 4: UNICODE Converter</a></li>
+            <li><a href="MLinstructions.html">Project 5: Machine Language Instructions Converter</a></li>
+          </ul>
+        </div>
+      </article>
     </div>
-
-  </div>
+  </section>
 
   <footer>
-    <p>@ Powered by Kemrick Rodriguez</p>
+    <p> @ Powered by Kemrick Rodriguez </p>
   </footer>
 
-</body>
-</html>
-
-
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIKXbpyZXyX0F5pMQ9DXe5U6wevKbsHqFkhb37lqotfj+ntVws3vZ" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist
