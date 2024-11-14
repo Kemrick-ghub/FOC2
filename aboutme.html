@@ -6,29 +6,32 @@
     <title>About Me - Kemrick Rodriguez</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
+        /* Overall body styling */
         body {
-            background-color: #ffe4e1; /* overall bg */
-            color: #4B4A57; /* soft dark text */
+            background-color: #ffe4e1; /* Background color */
+            color: #4B4A57; /* Soft dark text */
             font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
+        /* Header Styling */
         header {
-            background-color: Teal; 
-            padding: 2rem;
-            color: #fff; /* white */
+            background-color: #008080; /* Teal */
+            padding: 2rem 0;
+            color: #fff; /* White */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center;
         }
 
         header h2 {
             font-size: 2.5rem;
-            margin-bottom: 20px; /* space between title and nav */
-            text-align: center; /* Center the header */
+            margin-bottom: 20px; /* Space between title and nav */
         }
 
-        /* bar in header */
         .nav-header {
             display: flex;
             justify-content: center;
@@ -37,7 +40,7 @@
 
         .nav-header a {
             color: #5D536B;
-            background-color: #ADD8E6; /* baby blue */
+            background-color: #ADD8E6; /* Baby blue */
             padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
@@ -45,33 +48,41 @@
         }
 
         .nav-header a:hover {
-            background-color: light-green; /* color changes on hover */
+            background-color: #90EE90; /* Light green on hover */
         }
 
-        /* Article section */
-        .background-section {
-            background-color: #FFEBEE; /* pink background for article / section thingy */
-            padding: 3px;
-            font-weight: bold;
-            border-radius: 10px; /* shape of section thingy */
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
+        /* About Me Section */
         .about-container {
-            display: flex; /* Flexbox for centering */
-            flex-direction: column; /* Align items vertically */
-            align-items: center; /* Center horizontally */
-            text-align: center; /* Center text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 2rem;
         }
 
         .profile-picture {
-            border-radius: 50%; /* Circular image */
-            width: 280px; /* Shape of image */
-            height: 280px;
-            border: 5px solid #800080; /* Purple border around picture */
-            object-fit: cover; /* Ensures the image fits the circular frame */
-            margin-bottom: 10px; /* Space between image and text */
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            border: 5px solid #800080; /* Purple border */
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .about-text {
+            max-width: 800px;
+            padding: 0 1rem;
+            line-height: 1.6;
+        }
+
+        /* Section background and styling */
+        .background-section {
+            background-color: #FFEBEE; /* Light pink background */
+            padding: 3rem;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            text-align: center;
         }
 
         .background-section img {
@@ -80,13 +91,29 @@
             border-radius: 10px;
         }
 
-        /* Footer */
+        /* Footer Styling */
         footer {
-            background-color: #90EE90; /* light green */
-            padding: 2rem; /* space */
+            background-color: #90EE90; /* Light green */
+            padding: 2rem 0;
             text-align: center;
             color: #5D536B;
-            border-top: 2px solid #D5B0FF;
+            border-top: 2px solid #D5B0FF; /* Subtle border */
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Links Styling */
+        h4 a {
+            color: #008080; /* Teal link color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        h4 a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -100,25 +127,33 @@
         <a href="concepts.html">Concepts</a>
         <a href="database.html">Databases</a>
         <a href="documentation.html">Documentation</a>
-        <a href="aboutme.html">Dev Team</a>
+      
     </nav>
 </header>
 
 <!-- About Me Section -->
-<section class="container mt-5">
-    <h3>About Me</h3>
-    <h4><a href="resume3.html" style="color: black; text-decoration: none;">Visit my resume</a></h4>
-    <div class="about-container">
-        <img src="20220802_174848.jpg" alt="Kemrick Rodriguez" class="profile-picture">
-        <div class="about-text">
-            <p>Kemrick Rodriguez holds a high school degree from Edward P. Yorke High School located in Belize, Central America. He is now completing his college degree at the University of Belize for an Associate in Information Technology. He now ventures with the courses of Principles of Programming 1, Fundamentals of Computing, Ethics, English, and two types of Maths.</p>
+<section class="container">
+    <div class="background-section">
+        <h3>About Me</h3>
+        <h4><a href="resume3.html">Visit my resume</a></h4>
+        <div class="about-container">
+            <img src="20220802_174848.jpg" alt="Kemrick Rodriguez" class="profile-picture">
+            <div class="about-text">
+                <p>Kemrick Rodriguez holds a high school degree from Edward P. Yorke High School located in Belize, Central America. He is currently completing his college degree at the University of Belize for an Associate in Information Technology. His courses include Principles of Programming 1, Fundamentals of Computing, Ethics, English, and two types of Mathematics.</p>
+            </div>
         </div>
     </div>
 </section>
 
+<!-- Footer -->
 <footer>
-    <p>@ Powered by Kemrick Rodriguez & UB</p>
+    <p>@ Powered by Kemrick Rodriguez </p>
 </footer>
 
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIKXbpyZXyX0F5pMQ9DXe5U6wevKbsHqFkhb37lqotfj+ntVws3vZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1VtqVp87pOuN6q8h5/D9C7i3O4jPHX48j3VcC8cXlmjnp5O89Vu4ol" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQK7+u7jOq5jyO3aX0Q0E7mQOW44u5KN63B7jZ" crossorigin="anonymous"></script>
 </body>
 </html>
+
