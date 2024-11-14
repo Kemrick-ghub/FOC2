@@ -1,13 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>FoC</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoC - Fundamentals of Computing</title>
+ 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"     rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link rel="stylesheet" type="text/css" href="style.css">
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding-bottom: 80px; /* Space for footer */
+    }
+    header {
+      background-color: #445174;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    section {
+      padding: 30px;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    nav ul li a {
+      color: #343a40;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    nav ul li a:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+    article {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    article h1 {
+      font-size: 2.5rem;
+      color: #343a40;
+    }
+    footer {
+      background-color: #D38F8F;
+      color: #fff;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 1em;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      animation: footerFloat 2s ease-in-out infinite;
+    }
+
+    
+
+    footer p {
+      margin: 0;
+    }
+    .project-list a {
+      display: block;
+      padding: 10px;
+      color: black;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .project-list a:hover {
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+    }
+
+   
+    /* Image responsiveness */
+    article img {
+      width: 300px;  /* Fixed width for consistency */
+      height: 200px; /* Fixed height for consistency */
+      object-fit: cover; /* Ensure images are not distorted */
+    }
+
+    /* Flexbox layout for side-by-side images and links */
+    .image-link-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .image-link-container a {
+      text-align: center;
+    }
+
+    /* Media Queries for responsive design */
+    @media (max-width: 768px) {
+      header h2 {
+        font-size: 1.5rem;
+      }
+      nav ul li {
+        display: block;
+        margin-bottom: 10px;
+      }
+      nav ul li a {
+        font-size: 1rem;
+      }
+
+      .image-link-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
@@ -16,28 +135,52 @@
 
 <section>
   <nav>
-    <ul>
-      <li><h5><a href="index.html">Course</a></h5></li>
-      <li><h5><a href="project.html">Project</a></h5></li>
-	  <li><h5><a href="concepts.html">Concepts</a></h5></li>
-	  <li><h5><a href="database.html">Databases</a></h5></li>
-	  <li><h5><a href="documentation.html">Documentation</a></h5></li>
-      <li><h5><a href="aboutme.html">Dev Team</a></h5></li>
-    </ul>
-  </nav>
+   
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="project.html">Project</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="database.html">Databases</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="documentation.html">Documentation</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="aboutme.html">Dev Team</a>
+    </li>
+  </ul>
+</nav>
+  
   
   <article>
-  <center> <a href="https://www.canva.com/design/DAGVEGDOdLQ/mvLblTdIaCvLiLfD_epNjw/edit?utm_content=DAGVEGDOdLQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"><img src="1.png" alt="Concepts" width="515" height="290" ></a>
-   <p></p>
+    <div class="image-link-container">
+     
+      <!-- Second Image and Link -->
+      <a href="https://www.canva.com/design/DAGVEGDOdLQ/mvLblTdIaCvLiLfD_epNjw/edit?utm_content=DAGVEGDOdLQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">
+        <img id="canva" src="1.png" alt="More Concepts" />
+        <p>Click on the image for more concepts</p>
+      </a>
 
-    <p>Click on the image above for presentation.</p>
-	  <p> <a href="https://www.youtube.com/watch?v=mhsp1SSiugk">Click here for recording.</a></p></center>
-    </article>
+      <!-- Third Link for Video -->
+      <a href="https://www.youtube.com/watch?v=mhsp1SSiugk" id="video-link">
+        <img id="video-thumbnail" src="video.png" alt="Watch Video" />
+        <p>Click here to watch the video</p>
+      </a>
+    </div>
+  </article>
 </section>
 
 <footer>
-  <p>@ Powered by UB</p>
+  <p>@ Powered by Kemrick Rodriguez</p>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIKXbpyZXyX0F5pMQ9DXe5U6wevKbsHqFkhb37lqotfj+ntVws3vZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1VtqVp87pOuN6q8h5/D9C7i3O4jPHX48j3VcC8cXlmjnp5O89Vu4ol" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQK7+u7jOq5jyO3aX0Q0E7mQOW44u5KN63B7jZ" crossorigin="anonymous"></script>
 
 </body>
 </html>
